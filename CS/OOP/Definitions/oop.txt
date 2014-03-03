@@ -1,0 +1,125 @@
+OPP Definitions
+
+What is a Class?
+A Class is a blue print for an Object and is defined only once. Its defines the initial values for State and implementations of behaviour
+
+What is an Object?
+An Object is an Instance of a class. it is  defined by a class but created many times, as required.
+
+What is instantiation?
+Is the Creation of a real Instance ... It is a particular realisation of an Abstract Object.
+
+What is a Method?
+a Method is a subroute, procdure or function defined as part of a class and operates on an Object and its data members
+
+What is a Virtual Method?
+Is an Abstract method (interface method) who's signiture (i.e. name, return type and paramertes) is defined without any implementation. It is inherited an Implemented by another (child class);
+
+What is a Static Method/Variable?
+A Static method or variable is a method or variable that is defined only once for each instantiation, i.e. It cannot change or be updated e.g. Math.Pi in Java and Math.sqrt() are static and Math does not need to be Initialised
+
+Class Method?
+Is the opposite of a static method and are defined for each instance. e.g. an Object Car has a method go but inorder to call the method go we need to create the Car Object first(see below), this is often because the method makes use of the "this" or "self" selector which references the current Object instance.
+Car myCar = new Car();
+myCar.go();
+
+What is 'this' in OOP?
+is is a reference to the current Object and is used inside the Object class to refer/access to other members of the class from within.
+
+Static VS Class initialisers?
+Static Initialsers preform once for all Instances of a Class while Class Initialisers are preformed with each initialisation
+
+What is a Constructor?
+A Constructor is the Method 1st called when an Object is being created.
+
+What is a Destructor and a Finalize Method?
+A Destructor is the Method called when an Object is being destroyed. In Java this method doesn't exist as we cannot contorl when an object is being destroyed But, their is a Finalize method which is called before Garbage collection (no Guarantee of when this will happen)
+
+What is a Super/Base Class?
+A super class is the Parent class from whichthe currrent class Inherits some behaviours/members from
+
+What is a Sub/derived Class?
+Is a Child Class that inherits members from another class (parent)
+
+What is Inheritance?
+It is a paradigm for resusing code by "inheriting" some or all members of another class for reuse, extension and overriding.
+
+What is Encapsulation?
+Is paradigm used to hide information. Members can be defined as Private preventing them from being directly accessed and can be interacted using Accessor Methods such as getter and setters.
+
+What is Multiple Inheritance?
+This is Occurs when we need to inherit functionality / members form more then one class. In Java we cannot explicity inherit from more then one class but this can be achieved using interfaces (if a class implemnts another class it indirectly inherits from the class)
+
+What is Delegation/Forwarding?
+Is used to call some pices of code that is not known till run time. It allows us to define an objects behaviour in terms of another Objects behaviour. Altenitive to inheritance
+example:
+	public interface Worker() {
+	  public Result work();
+	}
+	public class Secretary() implements Worker {
+	   public Result work() {
+	     Result myResult = new Result();
+	     return myResult;
+	   }    
+	}
+	public class Boss() implements Worker {
+
+	   private Secretary secretary;
+
+	   public Result work() {
+	     return secretary.work();
+	   }   
+	}
+
+What is Aggregation?
+Is a Special form of of Association, when an Object A "Has a" another Object B, A Aggregates B 
+ -----<> (empty Diamond)
+
+What is Composition?
+Compostion is a Special form of Aggregation where Object A "has a" another Object B and Object B cannot exist with out Object A
+------<x> (filled in Diamond)
+
+What is Abstraction?
+Is Specifing a Framework with out an implementation.  e.g. an Abastract Class cannot be instanisated but can be inheirited by anothe calss which may or may not be instansiated 
+
+What is an Interface or Protocol?
+is a way to communicate between unrelated Classes. it is also a way to indirectly inherit.
+
+What is method overriding?
+Method overriding is when a Subclass inheirits a method but provids its own implementation, which may or maynot includ a call to the Original Inheritied method using super()
+
+What is Method OverLoading?
+Method Overloading is when the same Method name is used for multiple methods but with a different parameter list (can also have a differetn return type)
+
+What is Polymorphism?
+-means many forms
+-is the ability to present and use the same interface for different underlying forms (data types) eg the Aritmitic interfaces (+, -, /, *) can be used with double, int, BigDecimal...etc as well as the use of Subtypes using their parents methods, such as a ford and a BMW are both subclasses of Car so we can just call the Car's method to go, this way we can treat both as a Car and ignore the details when they are needed (even if things are implemnted differently, we do not need to be aware of it as the go method for both are either calling the parent or overriding the parent and we do not need to be aware of this when calling the method)
+
+What is a Methods Signiture?
+A methods Signiture consists of a Methods name, return type and paramater list. it is all that is included when declaring in an abstract call or interface
+
+What are the different Method visibilities and what access do they provide?
+public - any class can access it
+protected - any subclass(child) or any class part of the same package may access it
+private - only accessible by the members of the class where the private method is defined.
+
+What is Loose Coupling?
+Loose Coupling refers to when modules/components require little knowlede of other modules in order to use them.
+In a Loosely coupled system, components can be swapped out for alternitive implementations without updateing other modules (eng if you program to an interface you may have a test interface for unit testing and another interface for production but the calling code should not need to be aware of either case, just supplied the interface to call)
+
+What is High Cohesion?
+Refers to When a Class has a clearly defined Job ( low Cohesion would occure when a class has a lot of jobs/procedures that don't have enough in common with them). eg( CompileAndPrint Class should be 2 seperate classes, Compile class and  Print class)
+
+SOLID:
+S - Single Responsibility principle
+	-> a Class should only have a single responsiblity ( only a single reason why it might change)
+	-> based on Principle of Cohesion
+O - Open close Principle
+	->Entities should be Open for Extension and Closed for modification ( in order to modifiy we should inherit class or implement an interface).
+L- Liskov principle
+	->an Object should be replacable with Instances of Subtypes without altering the correctness of the program.( think of a Square as a child of a Rectangle and the GetWidth method)
+I - interface Segreation
+	->Many Client specific interfaces are better then an all purpose Interface wo has methods not required by the implementing class
+D - Dependency Inversion
+	-> One should Depend on Abstractions and Not Concrete Classes ( program to interfaces)
+
