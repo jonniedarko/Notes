@@ -78,7 +78,7 @@ Is a Special form of Association, when an Object A "Has a" another Object B, A A
 
 ####What is Composition?
 Composition is a Special form of Aggregation where Object A "has a" another Object B and Object B cannot exist without Object A
-------<x> (filled in Diamond)
+------<%> (filled in Diamond)
 
 ####What is Abstraction?
 Abstraction is a pattern specifying a Framework without an implementation.  e.g. an Abstract Class cannot be instantiated but can be inherited by another class which may or may not be instantiated 
