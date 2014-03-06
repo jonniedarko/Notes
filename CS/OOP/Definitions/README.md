@@ -16,13 +16,14 @@ a Method is a sub route, procedure or function defined as part of a class and op
 ####What is a Virtual Method?
 Is an Abstract method, (interface method), whose signature (i.e. name, return type and parameters) is defined without any implementation. It is inherited an Implemented by another (child class);
 
-####What is a Static Method/Variable?
-A Static method or variable is a method or variable that is defined only once for each instantiation, i.e. It cannot change or be updated e.g. Math.Pi in Java and Math.sqrt() are static and Math does not need to be Initialised
+####What is a Static or Class Method/Variable?
+A Static method or variable is a method or variable that is defined only once. it does not require instantiation and cannot variy with an instaniated object's data members i.e does not vary across instances
+e.g. Math.PI is a static variable that always returns the constant value of PI
 
-####What is Class Method?
-Is the opposite of a static method and are defined for each instance. E.g. an Object Car has a method go but in order to call the method go we need to create the Car Object first(see below), this is often because the method makes use of the "this" or "self" selector which references the current Object instance.
-Car myCar = new Car();
-myCar.go();
+####What is an Instance Method?
+are defined one but implementation can variy for each instance based on the instances data members/ variables.
+e.g. Shape.getArea() would depend on the size or type of the shape
+
 
 ####What is 'this' in OOP?
 The ‘this’ is a reference to the current Object and is used inside the Object class to refer/access to other members of the class from within.
