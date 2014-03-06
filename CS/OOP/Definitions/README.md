@@ -28,8 +28,8 @@ e.g. Shape.getArea() would depend on the size or type of the shape
 ####What is 'this' in OOP?
 The ‘this’ is a reference to the current Object and is used inside the Object class to refer/access to other members of the class from within.
 
-####What is Static VS Class initialisers?
-Static Initialisers preform once for all Instances of a Class while Class Initialisers are preformed with each initialisation
+####What is Static VS Instance initialisers?
+Static Initialisers preform once for all Instances of a Class when a Class is loaded While Instance Initialisers are preformed with each initialisation of the Class.
 
 ####What is a Constructor?
 A Constructor is the Method 1st called when an Object is being created.
