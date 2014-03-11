@@ -16,3 +16,7 @@ String mood = inProfit() ? "happy" : "sad";
 |this   |is   |a   |test   |boom   |
 |   |   |   |   |  2 |
 |   |   |   |   | 4  |
+
+| Java  | JavaScript  |
+|---|---|
+|```java String mood = inProfit() ? "happy" : "sad";``` | ```js (IsChecked) ? removeItem($this) : addItem($this);```|
