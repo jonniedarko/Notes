@@ -19,4 +19,10 @@ String mood = inProfit() ? "happy" : "sad";
 
 | Java  | JavaScript  |
 |---|---|
-|```java String mood = inProfit() ? "happy" : "sad";``` | ```js (IsChecked) ? removeItem($this) : addItem($this);```|
+|```java 
+String mood = inProfit() ? "happy" : "sad";
+``` 
+| 
+```js 
+(IsChecked) ? removeItem($this) : addItem($this);
+```|
