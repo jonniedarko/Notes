@@ -75,20 +75,43 @@ Nod should be all set Now so lets test by checking the version
 ```
    
 <a name="Mongodbsetup"></a>
-##Mongodb
-###Issue the following command to import the MongoDB public GPG Key:
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-###Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:
-echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+##Mongodb Setup
+MongoDB is an open-source document database, and the leading NoSQL database. Among it's features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is espically useful with node since we are already working with Javascript, and in a prototyping and rapid development enviorment it means we don't have to get hung up on our models and can change them on the fly.
 
-#Reload local package database
-sudo apt-get update
-# install mongoDB
-# create /data/db
-# change permissions
-sudo chown -R username.groupname /data/db
+We will use `.deb` packages to install MongoDB. While Ubuntu includes its own MongoDB packages, the official MongoDB packages are generally more up-to-date.
+So the first thing we need to do is add the [MongoDB public GPG Key ](http://docs.mongodb.org/10gen-gpg-key.asc)
+```bash
+   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+```
+Create the /etc/apt/sources.list.d/mongodb.list list file using the following command:
+```bash   
+   echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+```
 
-- Sources
-http://askubuntu.com/questions/328681/installing-the-latest-node-js-mongodb
-http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
-http://stackoverflow.com/questions/5300861/mongodb-only-works-when-run-as-root-on-ubuntu-data-directory-issue
+Now we need to reload local package database
+```bash
+   sudo apt-get update
+```
+Install mongoDB
+```bash
+   sudo apt-get install mongodb-org
+```
+Create /data/db which is where our schemas will be stored (this may require sudo)
+```bash
+   mkdir /data/db
+```
+Make sure you change the premissions of this folder so that you do not require sudo, I did this by giving my username and a specific group access
+```
+   sudo chown -R username.groupname /data/db
+```
+Finally you can start running MongoDB with the command `mongod` Or `sudo /etc/init.d/mongod start`.
+Again I recommend changing the premmisions so that sudo is not required.
+
+
+####Coming soon..... 
+I will follow thing up with a tutorial on creating a minimal starting point for a Node Restful service which we will eventually use to communicate with our arduino, intel galileo and Raspberry Pi (I Will also follow up on getting a similar setup installed on a Pi)
+
+#####Sources
+- http://askubuntu.com/questions/328681/installing-the-latest-node-js-mongodb
+- http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+- http://stackoverflow.com/questions/5300861/mongodb-only-works-when-run-as-root-on-ubuntu-data-directory-issue
