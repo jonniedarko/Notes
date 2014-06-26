@@ -23,6 +23,8 @@ Lets make sure everything is uptdate on our system using `apt-get`:
 #Node.js Setup
 What is Node.js? It is a Server-side implementation of the Javascript platform which allows repaid development of applications.This is particularly true if you are using complete Javascript stack such as [MEAN]()(MongoDB, Express.js,Angular.js & Node.js) as development can be more consistent and be designed within the same system. This make rapid prototyping and proof of concept that much quicker.
 
+![nodejs.org](http://i.stack.imgur.com/64cSB.png)
+
 From my research online I have found that it is suggested building Node.js from source as packages in the Advanced Packaging Tool (AptGet) do not work always or are outdated at times on Ubuntu. So the first thing we need to do is install the some dependiences required for building Node.js
  - [build-essential](http://packages.ubuntu.com/lucid/build-essential) which is used to build Debian packages
  - [lamp-server](https://help.ubuntu.com/community/ApacheMySQLPHP) which installs Apache, MySQL & PHP for linux
