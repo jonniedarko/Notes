@@ -10,32 +10,68 @@ So what do we need to install & setup?
  - [Mongodb](#Mongodbsetup)
 
 <a name="beforestart"></a>
+###Before we start
+Lets make sure everything is uptdate on our system using `apt-get`:
 
-sudo apt-get upgrade 
-sudo apt-get update
+```bash
+   sudo apt-get upgrade 
+   sudo apt-get update
+```
 
 
 <a name="nodesetup"></a>
 #Node.js Setup
-###These are needed for building and running Node
-sudo apt-get install build-essential lamp-server^
+What is Node.js? It is a Server-side implementation of the Javascript platform which allows repaid development of applications.This is particularly true if you are using complete Javascript stack such as [MEAN]()(MongoDB, Express.js,Angular.js & Node.js) as development can be more consistent and be designed within the same system. This make rapid prototyping and proof of concept that much quicker.
 
-sudo useradd -m -s /bin/bash fmaster
-sudo passwd fmaster
-#fmasterbedlabaws
+From my research online I have found that it is suggested building Node.js from source as packages in the Advanced Packaging Tool (AptGet) do not work always or are outdated at times on Ubuntu. So the first thing we need to do is install the some dependiences required for building Node.js
+ - [build-essential](http://packages.ubuntu.com/lucid/build-essential) which is used to build Debian packages
+ - [lamp-server](https://help.ubuntu.com/community/ApacheMySQLPHP) which installs Apache, MySQL & PHP for linux
 
-#Node
-wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz
-tar -xvzf node-v0.10.22.tar.gz
-cd node-v0.10.22
+```bash
+   sudo apt-get install build-essential lamp-server^
+```
+Next we need to get the node packages to build, I went with v0.10.22 as I knew it was a stable release but if you wish to go for a newer version check out the [Node.js dist](http://nodejs.org/dist/) site for the verion number of your choice
 
-./configure
-make
-sudo make install
+```bash
+   #Get Node package
+   wget http://nodejs.org/dist/v0.10.22/node-v0.10.22.tar.gz
+   #unarchive it
+   tar -xvzf node-v0.10.22.tar.gz
+```   
+Next we need to mov the the node directory, run the configuration script, build it and then install it
+```bash
+  #Move into directory
+  cd node-v0.10.22
+  #Run the configuration script
+  ./configure
+  #Build it
+  make
+  #Install Node
+  sudo make install
+```
 
-#test Node installed correctly
-node -v
-npm version
+The Configuration script just sets up what ever enviroment variables required and performs checks required to build Node for our platform
+
+The `make` utility is to determine automatically which pieces of Node.js needs to be recompiled, and issues the commands to recompile them. 
+
+Nod should be all set Now so lets test by checking the version
+```bash
+   node -v
+   #Should output something like the following depending on the version you installed: v0.10.22
+   
+   npm version
+   # should out put something like
+   # { http_parser: '1.0',
+   #   node: '0.10.22',
+   #   v8: '3.14.5.9',
+   #   ares: '1.9.0-DEV',
+   #   uv: '0.10.19',
+   #   zlib: '1.2.3',
+   #   modules: '11',
+   #   openssl: '1.0.1e',
+   #   npm: '1.3.14' }
+   
+   
 <a name="Mongodbsetup"></a>
 ##Mongodb
 ###Issue the following command to import the MongoDB public GPG Key:
