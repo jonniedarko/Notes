@@ -1,6 +1,4 @@
-#AWS Enviorment set up for Maker 2014
-
-As part of our Maker 2014 project we decided to utilise an AWS server [Martin]() had signed up to. While we will probably end up using a local server on the day we thought it was a good opertunity to give AWS a test run. As well as giving us a way to share an enviorment while working as a distrubuted team, the process of setting up the AWS will server to Document the setup we require for our project. The Aim would be to later create a script that does all the installs and setups for us.
+As part of our Maker 2014 project we decided to utilise an AWS server [Martin]() had signed up to. While we will probably end up using a local server on the day we thought it was a good opportunity to give AWS a test run. As well as giving us a way to share an environment while working as a distributed team, the process of setting up the AWS will server to Document the setup we require for our project. The Aim would be to later create a script that does all the installs and setups for us.
 
 **Note: at the time of writing, this is a work in progress and I hope to keep it updated**
 
@@ -11,7 +9,7 @@ So what do we need to install & setup?
 
 <a name="beforestart"></a>
 ###Before we start
-Lets make sure everything is uptdate on our system using `apt-get`:
+Lets make sure everything is update on our system using `apt-get`:
 
 ```bash
    sudo apt-get upgrade 
@@ -76,7 +74,7 @@ Nod should be all set Now so lets test by checking the version
    
 <a name="Mongodbsetup"></a>
 ##Mongodb Setup
-MongoDB is an open-source document database, and the leading NoSQL database. Among it's features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is espically useful with node since we are already working with Javascript, and in a prototyping and rapid development enviorment it means we don't have to get hung up on our models and can change them on the fly.
+MongoDB is an open-source document database, and the leading NoSQL database. Among its features it includes JSON-style documents with dynamic schemas which offer simplicity and power. This is especially useful with node since we are already working with Javascript, and in a prototyping and rapid development environment it means we don't have to get hung up on our models and can change them on the fly.
 
 We will use `.deb` packages to install MongoDB. While Ubuntu includes its own MongoDB packages, the official MongoDB packages are generally more up-to-date.
 So the first thing we need to do is add the [MongoDB public GPG Key ](http://docs.mongodb.org/10gen-gpg-key.asc)
@@ -105,7 +103,7 @@ Make sure you change the premissions of this folder so that you do not require s
    sudo chown -R username.groupname /data/db
 ```
 Finally you can start running MongoDB with the command `mongod` Or `sudo /etc/init.d/mongod start`.
-Again I recommend changing the premmisions so that sudo is not required.
+Again I recommend changing the permissions so that sudo is not required.
 
 
 ####Coming soon..... 
