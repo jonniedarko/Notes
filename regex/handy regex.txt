@@ -1,4 +1,5 @@
 find:     ```js([\s\S]*?)```
-
 replace:  [javascript]$1[javascript]
 
+find:     `([\s\S]*?)`
+replace:  <code>$1</code>
