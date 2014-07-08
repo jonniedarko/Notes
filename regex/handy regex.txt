@@ -15,5 +15,9 @@ find:    ([\w\s\S]+)\n==+
 replace: <h1>$1</h1>
 
 # italics
-find:    ([*_])(["]?[\w\s\.]+["]?)(\1)
+find:    (`)([^\n^`][^\n^`]*[^\n])(`)
 replace: <em>$2</em>   
+
+# bold
+find     (\*\*|__)(.+)(\1)
+replace  <strong>$2</strong>
