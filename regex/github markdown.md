@@ -4,7 +4,7 @@ find:     <code> \`\`\`(\w+)([\s\S]*?)\`\`\`</code>
 replace:  ` [$1]\n$2\n[\\$1] `
 
 ###Inline Code block
-find:     ` \`([\s\S]*?)\` `
+find:     <code> \`([\s\S]*?)\` </code>
 
 replace:  ` <code>$1</code> `
 
@@ -19,7 +19,7 @@ find:    ` ([\w\s\S]+)\n==+ `
 replace: ` <h1>$1</h1> `
 
 ###italics
-find:    ` (`)([^\n^`][^\n^`]*[^\n])(`) `
+find:    <code> (`\)([^\n^`][^\n^`]*[^\n])(`\) </code>
 
 replace: ` <em>$2</em> `   
 
