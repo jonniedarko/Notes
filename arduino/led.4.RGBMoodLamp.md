@@ -4,10 +4,10 @@ In the last project, we saw that we could adjust the brightness of an LED using 
 ####Parts Required
 This time we are going to use three LEDs, one red, one green, and one blue. 
 
-Red Diffused 5mm LED ![redLed](https://cloud.githubusercontent.com/assets/3673943/3584985/ebd67d26-0c20-11e4-8372-295e58ab7e80.jpg)
-Green Diffused 5mm LED	![green led](https://cloud.githubusercontent.com/assets/3673943/3585742/7f60e948-0c29-11e4-95fd-611c5bb211bd.jpg)
-Blue Diffused 5mm LED	![blue led](https://cloud.githubusercontent.com/assets/3673943/3586095/d828d6d2-0c2c-11e4-9a07-b4d667e24eb9.jpg)
-3 x Current-Limiting Resistors	![resistor](https://cloud.githubusercontent.com/assets/3673943/3584986/ebd6ee14-0c20-11e4-9095-93822c64d14a.jpg)
+|Red Diffused 5mm LED |![redLed](https://cloud.githubusercontent.com/assets/3673943/3584985/ebd67d26-0c20-11e4-8372-295e58ab7e80.jpg)|
+|Green Diffused 5mm LED |![green led](https://cloud.githubusercontent.com/assets/3673943/3585742/7f60e948-0c29-11e4-95fd-611c5bb211bd.jpg)|
+|Blue Diffused 5mm LED	|![blue led](https://cloud.githubusercontent.com/assets/3673943/3586095/d828d6d2-0c2c-11e4-9a07-b4d667e24eb9.jpg)|
+|3 x Current-Limiting Resistors	|![resistor](https://cloud.githubusercontent.com/assets/3673943/3584986/ebd6ee14-0c20-11e4-9095-93822c64d14a.jpg)|
 
 ####Connect It Up
 Connect up your three LEDs as shown below. Get a piece of paper about A5 size (6" by 8"), roll it into a cylinder, then tape it so it remains that way. Then place the cylinder over the top of the three LEDs. This will diffuse the light from the three LEDs and merge the colors into one.
