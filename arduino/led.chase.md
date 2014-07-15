@@ -2,7 +2,7 @@
 We are now going to use a string of LEDs (10 in total) to make an LED chase effect (see Table 3-1), similar to that used on the car KITT in the Knightrider TV series or the Cylons in Battlestar Galactica; on the way, we’ll introduce the concept of arrays.
 
 ####Parts Required
-10 x 5mm RED LEDs ![LEDs]((https://cloud.githubusercontent.com/assets/3673943/3584985/ebd67d26-0c20-11e4-8372-295e58ab7e80.jpg)
+10 x 5mm RED LEDs ![LEDs](https://cloud.githubusercontent.com/assets/3673943/3584985/ebd67d26-0c20-11e4-8372-295e58ab7e80.jpg)
 
 10 x Current-Limiting Resistors ![Resistors](https://cloud.githubusercontent.com/assets/3673943/3584986/ebd6ee14-0c20-11e4-9095-93822c64d14a.jpg)
 
