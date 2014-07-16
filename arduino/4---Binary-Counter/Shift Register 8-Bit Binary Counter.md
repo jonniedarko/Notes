@@ -1,12 +1,12 @@
 #Shift Register 8-Bit Binary Counter
 we are going to use additional ICs (integrated circuits) in the form of shift registers, to enable us to drive LEDs to display a binary counter (we will explain what binary is shortly). In this project, we will drive eight LEDs independently using just three output pins from the Arduino.
 
-|parts| |
-|-----|--|
+|parts                       |                                  |
+|----------------------------|----------------------------------|
 | 1 x 74HC595 Shift Register | ![shift register ic](https://cloud.githubusercontent.com/assets/3673943/3596920/c4322616-0ccb-11e4-90b0-1e03290ad4db.jpg) |
-|8 x 560Ω Resistors*	| ![560 ohm resistor](https://cloud.githubusercontent.com/assets/3673943/3596919/c432143c-0ccb-11e4-954a-0efdd441872d.jpg) |
-|8 x 5mm LEDs	| ![redLed](https://cloud.githubusercontent.com/assets/3673943/3584985/ebd67d26-0c20-11e4-8372-295e58ab7e80.jpg) |
-|0.1uF Capacitor | ![0 1uf capacitor](https://cloud.githubusercontent.com/assets/3673943/3596918/c432102c-0ccb-11e4-9d11-677c7b900433.jpg) |
+|8 x 560Ω Resistors*	     | ![560 ohm resistor](https://cloud.githubusercontent.com/assets/3673943/3596919/c432143c-0ccb-11e4-954a-0efdd441872d.jpg) |
+|8 x 5mm LEDs	             | ![redLed](https://cloud.githubusercontent.com/assets/3673943/3584985/ebd67d26-0c20-11e4-8372-295e58ab7e80.jpg) |
+|0.1uF Capacitor             | ![0 1uf capacitor](https://cloud.githubusercontent.com/assets/3673943/3596918/c432102c-0ccb-11e4-9d11-677c7b900433.jpg) |
 
 ####Connect It Up
 Examine the diagram carefully. Connect the 5V to the top rail of your breadboard and the ground to the bottom. The chip has a small dimple on one end; this dimple goes to the left. Pin 1 is below the dimple, pin 8 at bottom right, pin 9 at top right, and pin 16 at top left.
