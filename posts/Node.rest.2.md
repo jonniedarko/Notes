@@ -16,11 +16,11 @@ var User = new Schema({
 
 ```
 
-Whats happening here is as well as enforcing a unique rule we are telling MongoDB to drop any dublicates. This is required for the unique rule to work **IF** you already have duplicates but beware, it does exactly what you think it does...it drops the records.
+Whats happening here is as well as enforcing a unique rule we are telling MongoDB to drop any duplicates. This is required for the unique rule to work **IF** you already have duplicates but beware, it does exactly what you think it does...it drops the records.
 
 If you don't have any duplicates then `index: {unique: true}` will work on its own.
 
-Next we are goin to create som Mongoose validation on our schemas. Before we do this lets create some user validation helper methods. For this lets create a seperate module to house our validation rule. Inside lib create `user.validation.js`. What we want to do is create an Object consisting of our Validation rules.
+Next we are going to create some Mongoose validation on our schemas. Before we do this lets create some user validation helper methods. For this lets create a separate module to house our validation rule. Inside lib create `user.validation.js`. What we want to do is create an Object consisting of our Validation rules.
 
 ```js
 module.exports = {
@@ -60,7 +60,7 @@ What about SQL injection?
 Dollar Sign Operator Escaping
 >Field names in MongoDB’s query language have semantic meaning. The dollar sign (i.e $) is a reserved character used to represent operators (i.e. $inc.) Thus, you should ensure that your application’s users cannot inject operators into their inputs.
 
-So While we may not need to worry about SQL injection, we do need to consider the `$` issue. There are many ways to approach this for example sawpping it for it's unicode character but we're gona be lazy and just reject any values that ask for it. Our username and password already do this as they do not allow characters outside of Alpha Numerical. We could apply this current validation to the first and second name but for the hell of it we'll create a new method. Add the following to our *"user.validation.js"* file:
+So While we may not need to worry about SQL injection, we do need to consider the `$` issue. There are many ways to approach this for example swapping it for it's unicode character but we're gona be lazy and just reject any values that ask for it. Our username and password already do this as they do not allow characters outside of Alpha Numerical. We could apply this current validation to the first and second name but for the hell of it we'll create a new method. Add the following to our *"user.validation.js"* file:
 
 ```js
 isSafe: function (input)
@@ -72,7 +72,7 @@ isSafe: function (input)
 
 As mentioned above all this does is return false if the input contains `$` and true otherwise. So now we just need to add our path methods as part of our user model:
 
-Now inside our User model module we can import this module and using Mongoose's Schema we can attach validations method using `path()`. These are methods that are called before adding to the Database, if they fail then they are not persisted to the Database. So lets incorperate the above methods into our Schema validation:
+Now inside our User model module we can import this module and using Mongoose's Schema we can attach validations method using `path()`. These are methods that are called before adding to the Database, if they fail then they are not persisted to the Database. So lets incorporate the above methods into our Schema validation:
 
 ```js
 var validate = require('./user.validation');
@@ -87,7 +87,7 @@ User.path('password').validate(function (input){
 ```
 
 
-And boom! Now we can feel a little more confident in our stored data. One Final change you can make is to return a more meaningfull error. This is as 
+And boom! Now we can feel a little more confident in our stored data. One Final change you can make is to return a more meaningful error. This is as 
 simple as including an extra string variable in the Validate Method:
 
 ```js
@@ -113,4 +113,4 @@ Here's what is should look like in Postman
 
 [Code to this point](https://github.com/jonniedarko/Node-Resful-Api/commit/171b160cd785de1327749f247c9c0f9d5d5de8af)
 
-Not so difficult eh? In the Next post we will deal with Encryption....Too many Companies are in hot water these days because they are storing sensitive information in plane text. I will show you how to apply basic encrytion to fields in out Database.
+Not so difficult eh? In the Next post we will deal with Encryption....Too many Companies are in hot water these days because they are storing sensitive information in plane text. I will show you how to apply basic encryption to fields in out Database.
