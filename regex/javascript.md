@@ -1,3 +1,3 @@
 ## sublime search terms
 ####find console.logs
-find ' console.log\([,'\w\s]+\);' 
+find: <code>console.log\\([,'\\w\\s]+\\);</code>
